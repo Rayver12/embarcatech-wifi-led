@@ -70,7 +70,7 @@ target_include_directories(pico_w_wifi_complete_example PRIVATE
 # Add any user requested libraries
 target_link_libraries(pico_w_wifi_complete_example 
         pico_cyw43_arch_lwip_threadsafe_background hardware_pwm hardware_i2c
-        )
+        pico_cyw43_arch)
 
 pico_add_extra_outputs(pico_w_wifi_complete_example)
 

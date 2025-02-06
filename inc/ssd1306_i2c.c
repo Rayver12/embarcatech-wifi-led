@@ -143,10 +143,11 @@ inline int ssd1306_get_font(uint8_t character)
   }
   else{
     switch (character) {
-      case '.': return 37;   // Exemplo: espaço no índice 37
-      case ',': return 38;   // Índice 38 para ','
-      case '!': return 39;   // Índice 39 para '!'
-      case '?': return 40;   // Índice 40 para '?'
+      case '.': return 37;  // Exemplo: espaço no índice 37
+      case ',': return 38;  // Índice 38 para ','
+      case '!': return 39;  // Índice 39 para '!'
+      case '?': return 40;  // Índice 40 para '?'
+      case '-': return 41;  // Indice 41 para '-'
 
     default: return 0;};
 }

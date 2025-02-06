@@ -1,5 +1,5 @@
-#define WIFI_SSID "NOME DA SUA REDE WIFI"  // Substitua pelo nome da sua rede Wi-Fi
-#define WIFI_PASS "SENHA DA REDE WIFI" // Substitua pela senha da sua rede Wi-Fi
+#define WIFI_SSID "ED-LINK FIBRA // Joao"  // Substitua pelo nome da sua rede Wi-Fi
+#define WIFI_PASS "JOAO2FILHO8" // Substitua pela senha da sua rede Wi-Fi
 #include "pico/cyw43_arch.h"
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
@@ -48,9 +48,9 @@ void display_message(char *line1, char *line2, char *line3) {
     uint8_t ssd[ssd1306_buffer_length];
     memset(ssd, 0, ssd1306_buffer_length);
 
-    ssd1306_draw_string(ssd, 5, 0, line1);
+    ssd1306_draw_string(ssd, 5, 8, line1);
     ssd1306_draw_string(ssd, 5, 24, line2);
-    ssd1306_draw_string(ssd, 5, 48, line3);
+    ssd1306_draw_string(ssd, 5, 40, line3);
 
     render_on_display(ssd, &frame_area);
 }
@@ -248,13 +248,13 @@ int main() {
 
     if (cyw43_arch_init()) {
         printf("Erro ao inicializar o Wi-Fi\n");
-        display_message("Erro:", "WiFi falhou", NULL);
+        display_message("Erro:", "Wi-Fi falhou", NULL);
         return 1;
     }
 
     cyw43_arch_enable_sta_mode();
     printf("Conectando ao Wi-Fi...\n");
-    display_message("Conectando", "ao WiFi", NULL);
+    display_message("Conectando", "ao Wi-Fi", NULL);
 
     while (cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASS, CYW43_AUTH_WPA2_AES_PSK, 10000) != 0) {
         printf("Falha ao conectar ao Wi-Fi\nTentando novamente!\n");
