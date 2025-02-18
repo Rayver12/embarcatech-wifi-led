@@ -384,6 +384,6 @@ Distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 - **Nome:** Rafael Avelino dos Santos
 - **Email:** rafaelavelino0908@gmail.com
-- **GitHub:** [Rayver12](github.com/Rayver12)
+- **GitHub:** [Rayver12](https://github.com/Rayver12)
 
 ---
