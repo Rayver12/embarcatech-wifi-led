@@ -19,35 +19,35 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(pico_w_wifi_complete_example C CXX ASM)
+project(webserver_testes C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(pico_w_wifi_complete_example pico_w_wifi_complete_example.c inc/ssd1306_i2c.c )
+add_executable(webserver_testes webserver_testes.c inc/ssd1306_i2c.c )
 
-pico_set_program_name(pico_w_wifi_complete_example "pico_w_wifi_complete_example")
-pico_set_program_version(pico_w_wifi_complete_example "0.1")
+pico_set_program_name(webserver_testes "webserver_testes")
+pico_set_program_version(webserver_testes "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(pico_w_wifi_complete_example 0)
-pico_enable_stdio_usb(pico_w_wifi_complete_example 1)
+pico_enable_stdio_uart(webserver_testes 0)
+pico_enable_stdio_usb(webserver_testes 1)
 
 # Add the standard library to the build
-target_link_libraries(pico_w_wifi_complete_example
+target_link_libraries(webserver_testes
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(pico_w_wifi_complete_example PRIVATE
+target_include_directories(webserver_testes PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(pico_w_wifi_complete_example 
+target_link_libraries(webserver_testes 
         pico_cyw43_arch_lwip_threadsafe_background hardware_pwm hardware_i2c
         pico_cyw43_arch)
 
-pico_add_extra_outputs(pico_w_wifi_complete_example)
+pico_add_extra_outputs(webserver_testes)
 
